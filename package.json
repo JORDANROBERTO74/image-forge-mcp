@@ -1,0 +1,38 @@
+{
+  "name": "image-forge",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "description": "MCP server for text-to-image and image-to-image generation on Cloudflare Workers AI",
+  "license": "MIT",
+  "author": {
+    "name": "Roberto Jordan",
+    "email": "jordanroberto74@gmail.com",
+    "url": "https://robertojordan.vercel.app/"
+  },
+  "type": "module",
+  "bin": {
+    "image-forge": "./build/index.js"
+  },
+  "engines": {
+    "node": ">=20.6"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node --env-file=.env build/index.js",
+    "spike": "node --env-file=.env scripts/spike.mjs",
+    "test:local": "node scripts/test-local.mjs",
+    "test:mcp": "node scripts/test-mcp.mjs",
+    "test:live": "node --env-file=.env scripts/test-live.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^5.6.2"
+  }
+}
